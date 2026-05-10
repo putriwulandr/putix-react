@@ -1,0 +1,9 @@
+{
+  "name": "putix-react",
+  "private": true,
+  "scripts": {
+    "dev": "pnpm --filter playground dev",
+    "build": "pnpm --filter putix build",
+    "build:watch": "pnpm --filter putix build --watch"
+  }
+}
