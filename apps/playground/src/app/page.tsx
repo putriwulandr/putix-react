@@ -31,17 +31,13 @@ export default function Home() {
 
       {/* Nav */}
       <nav className="relative z-10 flex items-center justify-between px-10 py-6">
-        <span
-          style={{
-            fontFamily: "'Georgia', serif",
-            fontSize: "1rem",
-            letterSpacing: "0.15em",
-            color: "#171717",
-            textTransform: "uppercase",
-          }}
-        >
-          putix
-        </span>
+        <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <img
+            src="/putix-ui-logos.png"
+            alt="putix logo"
+            style={{ width: "auto", height: "100px", objectFit: "contain" }}
+          />
+        </div>
         <div className="flex items-center gap-8">
           <a
             href="/components"
