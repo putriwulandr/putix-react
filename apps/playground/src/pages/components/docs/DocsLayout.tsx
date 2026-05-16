@@ -38,15 +38,31 @@ export function DocsLayout({ children }: DocsLayoutProps) {
       {/* Nav */}
       <nav
         className="relative z-10 flex items-center justify-between px-10 py-6"
-        style={{ borderBottom: '1px solid #f0f0f0', background: 'rgba(255,255,255,0.8)', backdropFilter: 'blur(8px)', position: 'sticky', top: 0 }}
+        style={{
+          borderBottom: '1px solid #f0f0f0',
+          background: 'rgba(255,255,255,0.8)',
+          backdropFilter: 'blur(8px)',
+          position: 'sticky',
+          top: 0,
+        }}
       >
         <Link href="/">
-          <img src="/putix-ui-logos.png" alt="putix logo" style={{ height: '50px', objectFit: 'contain' }} />
+          <img
+            src="/putix-ui-logos.png"
+            alt="putix logo"
+            style={{ height: '50px', objectFit: 'contain' }}
+          />
         </Link>
         <div className="flex items-center gap-8">
-          {NAV_LINKS.map(link =>
+          {NAV_LINKS.map((link) =>
             link.external ? (
-              <a key={link.label} href={link.href} target="_blank" rel="noopener noreferrer" style={navLinkStyle}>
+              <a
+                key={link.label}
+                href={link.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={navLinkStyle}
+              >
                 {link.label}
               </a>
             ) : (
@@ -60,23 +76,42 @@ export function DocsLayout({ children }: DocsLayoutProps) {
 
       <div style={{ display: 'flex', maxWidth: '1100px', margin: '0 auto', padding: '0 2rem' }}>
         {/* Sidebar */}
-        <aside style={{ width: '200px', flexShrink: 0, padding: '2.5rem 0', position: 'sticky', top: '80px', alignSelf: 'flex-start', height: 'calc(100vh - 80px)', overflowY: 'auto' }}>
+        <aside
+          style={{
+            width: '200px',
+            flexShrink: 0,
+            padding: '2.5rem 0',
+            position: 'sticky',
+            top: '80px',
+            alignSelf: 'flex-start',
+            height: 'calc(100vh - 80px)',
+            overflowY: 'auto',
+          }}
+        >
           <p style={sidebarLabelStyle}>Sections</p>
           {[
             { label: 'Introduction', href: '/components' },
             { label: 'Installation', href: '/components#installation' },
-          ].map(item => (
-            <Link key={item.label} href={item.href} style={{
-              ...sidebarLinkStyle,
-              color: router.pathname === '/components' && item.href === '/components' ? '#171717' : '#888',
-              fontWeight: router.pathname === '/components' && item.href === '/components' ? 600 : 400,
-            }}>
+          ].map((item) => (
+            <Link
+              key={item.label}
+              href={item.href}
+              style={{
+                ...sidebarLinkStyle,
+                color:
+                  router.pathname === '/components' && item.href === '/components'
+                    ? '#171717'
+                    : '#888',
+                fontWeight:
+                  router.pathname === '/components' && item.href === '/components' ? 600 : 400,
+              }}
+            >
               {item.label}
             </Link>
           ))}
 
           <p style={{ ...sidebarLabelStyle, marginTop: '1.5rem' }}>Components</p>
-          {COMPONENTS.map(comp => (
+          {COMPONENTS.map((comp) => (
             <Link
               key={comp.slug}
               href={`/components/${comp.slug}`}
@@ -93,15 +128,17 @@ export function DocsLayout({ children }: DocsLayoutProps) {
             >
               {comp.name}
               {comp.status !== 'stable' && (
-                <span style={{
-                  fontSize: '0.55rem',
-                  padding: '1px 6px',
-                  borderRadius: '9999px',
-                  background: STATUS_COLORS[comp.status],
-                  color: '#555',
-                  fontWeight: 400,
-                  letterSpacing: '0.05em',
-                }}>
+                <span
+                  style={{
+                    fontSize: '0.55rem',
+                    padding: '1px 6px',
+                    borderRadius: '9999px',
+                    background: STATUS_COLORS[comp.status],
+                    color: '#555',
+                    fontWeight: 400,
+                    letterSpacing: '0.05em',
+                  }}
+                >
                   {comp.status}
                 </span>
               )}
@@ -110,9 +147,7 @@ export function DocsLayout({ children }: DocsLayoutProps) {
         </aside>
 
         {/* Main content */}
-        <main style={{ flex: 1, padding: '3rem 0 6rem 4rem', minWidth: 0 }}>
-          {children}
-        </main>
+        <main style={{ flex: 1, padding: '3rem 0 6rem 4rem', minWidth: 0 }}>{children}</main>
       </div>
     </div>
   )

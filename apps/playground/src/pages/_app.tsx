@@ -14,7 +14,9 @@ const geistMono = Geist_Mono({
 
 export default function App({ Component, pageProps }: AppProps) {
   return (
-    <div className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-full flex flex-col`}>
+    <div
+      className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-full flex flex-col`}
+    >
       <Component {...pageProps} />
     </div>
   )
