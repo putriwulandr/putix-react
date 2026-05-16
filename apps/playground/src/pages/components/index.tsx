@@ -1,8 +1,8 @@
 import Link from 'next/link'
-import { DocsLayout } from './docs/DocsLayout'
-import { CodeBlock } from './docs/CodeBlocks'
-import { SectionLabel } from './docs/SectionLabel'
-import { COMPONENTS } from './docs/data'
+import { CodeBlock } from '@/docs/docs/CodeBlocks'
+import { DocsLayout } from '@/docs/docs/DocsLayout'
+import { SectionLabel } from '@/docs/docs/SectionLabel'
+import { COMPONENTS } from '@/docs/docs/data'
 
 export default function ComponentsPage() {
   return (

@@ -3,7 +3,9 @@
   "private": true,
   "scripts": {
     "dev": "pnpm --filter playground dev",
-    "build": "pnpm --filter putix build",
-    "build:watch": "pnpm --filter putix build --watch"
+    "build": "pnpm --filter putix build && pnpm --filter playground build",
+    "build:watch": "pnpm --filter putix build --watch",
+    "build:lib": "pnpm --filter putix build",
+    "build:playground": "pnpm --filter playground build"
   }
 }

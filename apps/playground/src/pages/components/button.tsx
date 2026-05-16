@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import { Button } from 'putix'
 import type { ButtonVariant, ButtonSize } from 'putix'
-import { DocsLayout } from './docs/DocsLayout'
-import { CodeBlock } from './docs/CodeBlocks'
-import { SectionLabel } from './docs/SectionLabel'
+import { CodeBlock } from '@/docs/docs/CodeBlocks'
+import { DocsLayout } from '@/docs/docs/DocsLayout'
+import { SectionLabel } from '@/docs/docs/SectionLabel'
 
 const VARIANTS: ButtonVariant[] = ['primary', 'outline', 'ghost', 'soft']
 const SIZES: ButtonSize[] = ['sm', 'md', 'lg']
