@@ -21,6 +21,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "putix": ["../../packages/putix/src/index.ts"],
+      "putix-react": ["../../packages/putix/src/index.ts"],
+      "putix-react/styles": ["../../packages/putix/src/styles/tokens.css"],
       "putix/styles": ["../../packages/putix/src/styles/tokens.css"]
     }
   },
