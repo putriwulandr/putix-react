@@ -1,4 +1,3 @@
-@import '../../../../packages/putix/src/styles/tokens.css';
 @import 'tailwindcss';
 
 @theme inline {
@@ -12,19 +11,190 @@
   --background: #ffffff;
   --foreground: #171717;
 
-  /* Typography */
+  /* ───────────────────────────────────────
+     BASE — Blue
+  ─────────────────────────────────────── */
+  --putix-blue-50: #ebf4ff;
+  --putix-blue-100: #bddeff;
+  --putix-blue-200: #90c8ff;
+  --putix-blue-300: #5aa8f7;
+  --putix-blue-500: #2b82ef;
+  --putix-blue-700: #1260c4;
+  --putix-blue-900: #0a3f88;
+
+  /* ───────────────────────────────────────
+     BASE — Pink
+  ─────────────────────────────────────── */
+  --putix-pink-50: #fff0f6;
+  --putix-pink-100: #ffd0e6;
+  --putix-pink-200: #ffa8cf;
+  --putix-pink-300: #f5709c;
+  --putix-pink-500: #e0457a;
+  --putix-pink-700: #b02f5e;
+  --putix-pink-900: #7a1940;
+
+  /* ───────────────────────────────────────
+     BASE — Neutral
+  ─────────────────────────────────────── */
+  --putix-neutral-50: #f5f6f8;
+  --putix-neutral-100: #e2e5ec;
+  --putix-neutral-200: #c8ceda;
+  --putix-neutral-300: #9aa2b4;
+  --putix-neutral-500: #6b758a;
+  --putix-neutral-700: #424b5f;
+  --putix-neutral-900: #1e2436;
+
+  /* ───────────────────────────────────────
+     SEMANTIC — Success
+  ─────────────────────────────────────── */
+  --putix-success-50: #edfaf3;
+  --putix-success-100: #c1edd6;
+  --putix-success-200: #80d4a9;
+  --putix-success-300: #30b474;
+  --putix-success-500: #1a7c40;
+  --putix-success-700: #0f5a2e;
+  --putix-success-900: #063b1d;
+
+  /* ───────────────────────────────────────
+     SEMANTIC — Warning
+  ─────────────────────────────────────── */
+  --putix-warning-50: #fff8e6;
+  --putix-warning-100: #ffe8aa;
+  --putix-warning-200: #ffcf60;
+  --putix-warning-300: #f0a400;
+  --putix-warning-500: #b56a00;
+  --putix-warning-700: #7d4800;
+  --putix-warning-900: #4d2b00;
+
+  /* ───────────────────────────────────────
+     SEMANTIC — Danger
+  ─────────────────────────────────────── */
+  --putix-danger-50: #fff1f0;
+  --putix-danger-100: #ffcac6;
+  --putix-danger-200: #ff9590;
+  --putix-danger-300: #f5524a;
+  --putix-danger-500: #c0392b;
+  --putix-danger-700: #8b2219;
+  --putix-danger-900: #59130e;
+
+  /* ───────────────────────────────────────
+     SEMANTIC — Info (alias of blue)
+  ─────────────────────────────────────── */
+  --putix-info-50: var(--putix-blue-50);
+  --putix-info-100: var(--putix-blue-100);
+  --putix-info-200: var(--putix-blue-200);
+  --putix-info-300: var(--putix-blue-300);
+  --putix-info-500: var(--putix-blue-500);
+  --putix-info-700: var(--putix-blue-700);
+  --putix-info-900: var(--putix-blue-900);
+
+  /* ───────────────────────────────────────
+     EXTENDED — Violet
+  ─────────────────────────────────────── */
+  --putix-violet-50: #f5f3ff;
+  --putix-violet-100: #ddd6fe;
+  --putix-violet-200: #c4b5fd;
+  --putix-violet-300: #a78bfa;
+  --putix-violet-500: #7c3aed;
+  --putix-violet-700: #5b21b6;
+  --putix-violet-900: #3b0764;
+
+  /* ───────────────────────────────────────
+     EXTENDED — Teal
+  ─────────────────────────────────────── */
+  --putix-teal-50: #f0fdfa;
+  --putix-teal-100: #ccfbf1;
+  --putix-teal-200: #99f6e4;
+  --putix-teal-300: #2dd4bf;
+  --putix-teal-500: #0d9488;
+  --putix-teal-700: #0f766e;
+  --putix-teal-900: #134e4a;
+
+  /* ───────────────────────────────────────
+     EXTENDED — Amber
+  ─────────────────────────────────────── */
+  --putix-amber-50: #fffbeb;
+  --putix-amber-100: #fef3c7;
+  --putix-amber-200: #fde68a;
+  --putix-amber-300: #fcd34d;
+  --putix-amber-500: #d97706;
+  --putix-amber-700: #92400e;
+  --putix-amber-900: #451a03;
+
+  /* ───────────────────────────────────────
+     EXTENDED — Orange
+  ─────────────────────────────────────── */
+  --putix-orange-50: #fff7ed;
+  --putix-orange-100: #ffedd5;
+  --putix-orange-200: #fed7aa;
+  --putix-orange-300: #fb923c;
+  --putix-orange-500: #ea580c;
+  --putix-orange-700: #9a3412;
+  --putix-orange-900: #431407;
+
+  /* ───────────────────────────────────────
+     EXTENDED — Rose
+  ─────────────────────────────────────── */
+  --putix-rose-50: #fff1f2;
+  --putix-rose-100: #ffe4e6;
+  --putix-rose-200: #fecdd3;
+  --putix-rose-300: #fb7185;
+  --putix-rose-500: #e11d48;
+  --putix-rose-700: #be185d;
+  --putix-rose-900: #881337;
+
+  /* ───────────────────────────────────────
+     EXTENDED — Sky
+  ─────────────────────────────────────── */
+  --putix-sky-50: #f0f9ff;
+  --putix-sky-100: #e0f2fe;
+  --putix-sky-200: #bae6fd;
+  --putix-sky-300: #38bdf8;
+  --putix-sky-500: #0ea5e9;
+  --putix-sky-700: #0369a1;
+  --putix-sky-900: #0c4a6e;
+
+  /* ───────────────────────────────────────
+     EXTENDED — Lime
+  ─────────────────────────────────────── */
+  --putix-lime-50: #f7fee7;
+  --putix-lime-100: #ecfccb;
+  --putix-lime-200: #d9f99d;
+  --putix-lime-300: #86efac;
+  --putix-lime-500: #4ade80;
+  --putix-lime-700: #15803d;
+  --putix-lime-900: #14532d;
+
+  /* ───────────────────────────────────────
+     EXTENDED — Indigo
+  ─────────────────────────────────────── */
+  --putix-indigo-50: #eef2ff;
+  --putix-indigo-100: #e0e7ff;
+  --putix-indigo-200: #c7d2fe;
+  --putix-indigo-300: #818cf8;
+  --putix-indigo-500: #6366f1;
+  --putix-indigo-700: #4338ca;
+  --putix-indigo-900: #1e1b4b;
+
+  /* ───────────────────────────────────────
+     Typography
+  ─────────────────────────────────────── */
   --putix-font-sans: 'Inter', system-ui, sans-serif;
   --putix-font-size-sm: 0.875rem;
   --putix-font-size-md: 1rem;
   --putix-font-size-lg: 1.125rem;
 
-  /* Radius */
+  /* ───────────────────────────────────────
+     Radius
+  ─────────────────────────────────────── */
   --putix-radius-sm: 0.375rem;
   --putix-radius-md: 0.625rem;
   --putix-radius-lg: 1rem;
   --putix-radius-full: 9999px;
 
-  /* Shadow */
+  /* ───────────────────────────────────────
+     Shadow
+  ─────────────────────────────────────── */
   --putix-shadow-sm: 0 1px 4px rgba(224, 69, 122, 0.15);
   --putix-shadow-md: 0 4px 16px rgba(224, 69, 122, 0.2);
 }
