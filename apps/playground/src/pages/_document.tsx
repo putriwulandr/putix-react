@@ -8,7 +8,7 @@ export default function Document() {
         <meta name="description" content="by Putri Wulandari" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <body className="min-h-full flex flex-col">
+      <body className="min-h-full flex flex-col antialiased">
         <Main />
         <NextScript />
       </body>

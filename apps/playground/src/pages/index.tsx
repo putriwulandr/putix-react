@@ -1,15 +1,24 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 
 function FloatingMenu() {
   const [visible, setVisible] = useState(false)
   const [open, setOpen] = useState(false)
+  const isMounted = useRef(false)
 
   useEffect(() => {
-    const handleScroll = () => setVisible(window.scrollY > 88)
+    isMounted.current = true
+    const handleScroll = () => {
+      if (isMounted.current) setVisible(window.scrollY > 88)
+    }
     window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    return () => {
+      isMounted.current = false
+      window.removeEventListener('scroll', handleScroll)
+    }
   }, [])
+
+  if (!visible) return null
 
   const menuItems = [
     { label: 'Home', href: '/', internal: true },

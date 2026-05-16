@@ -63,9 +63,9 @@ function Playground() {
     padding: '4px 12px',
     borderRadius: '9999px',
     border: '1px solid',
-    borderColor: active ? '#171717' : '#e5e5e5',
-    background: active ? '#171717' : '#fff',
-    color: active ? '#fff' : '#888',
+    borderColor: active ? 'var(--putix-pink-500)' : 'var(--putix-neutral-100)',
+    background: active ? 'var(--putix-pink-500)' : '#fff',
+    color: active ? '#fff' : 'var(--putix-neutral-500)',
     cursor: 'pointer',
     transition: 'all 0.15s',
   })

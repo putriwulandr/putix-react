@@ -15,22 +15,25 @@ const baseStyles: React.CSSProperties = {
 
 const variantStyles: Record<string, React.CSSProperties> = {
   primary: {
-    background: 'var(--putix-color-rose)',
+    background: 'var(--putix-pink-500)',
     color: 'white',
-    boxShadow: 'var(--putix-shadow-sm)',
+    border: '1.5px solid transparent',
+    boxShadow: '0 1px 4px rgba(224, 69, 122, 0.2)',
   },
   outline: {
     background: 'transparent',
-    color: 'var(--putix-color-rose-dark)',
-    border: '1.5px solid var(--putix-color-rose)',
+    color: 'var(--putix-pink-700)',
+    border: '1.5px solid var(--putix-pink-500)',
   },
   ghost: {
     background: 'transparent',
-    color: 'var(--putix-color-rose-dark)',
+    color: 'var(--putix-pink-700)',
+    border: '1.5px solid transparent',
   },
   soft: {
-    background: 'var(--putix-color-blush)',
-    color: 'var(--putix-color-rose-dark)',
+    background: 'var(--putix-pink-50)',
+    color: 'var(--putix-pink-700)',
+    border: '1.5px solid transparent',
   },
 }
 
