@@ -1,18 +1,5 @@
-"use client"
-
+import Link from 'next/link'
 import { Button } from 'putix'
-
-// export default function Home() {
-//   return (
-//     <main style={{ padding: '2rem', display: 'flex', gap: '1rem' }}>
-//       <div>PUTIX LIBRARY</div>
-//       <Button variant="primary">Primary</Button>
-//       <Button variant="outline">Outline</Button>
-//       <Button variant="ghost">Ghost</Button>
-//       <Button variant="soft">Soft</Button>
-//     </main>
-//   )
-// }
 
 export default function Home() {
   return (
@@ -39,7 +26,7 @@ export default function Home() {
           />
         </div>
         <div className="flex items-center gap-8">
-          <a
+          <Link
             href="/components"
             style={{
               fontFamily: "'Courier New', monospace",
@@ -51,7 +38,8 @@ export default function Home() {
             }}
           >
             Components
-          </a>
+          </Link>
+
           <a
             href="https://github.com/putriwulandr/putix-react"
             target="_blank"
@@ -141,7 +129,7 @@ export default function Home() {
 
         {/* CTA Buttons */}
         <div className="flex items-center gap-4 flex-wrap justify-center">
-          <a
+          <Link
             href="/components"
             style={{
               fontFamily: "'Courier New', monospace",
@@ -159,7 +147,7 @@ export default function Home() {
             onMouseOut={e => (e.currentTarget.style.opacity = "1")}
           >
             Browse Components
-          </a>
+          </Link>
           <a
             href="https://github.com/putriwulandr/putix-react"
             target="_blank"
@@ -197,8 +185,8 @@ export default function Home() {
             gap: "12px",
           }}
         >
-          <span style={{ fontFamily: "'Courier New', monospace", fontSize: "0.8rem", color: "#181818", }}>$</span>
-          <span style={{ fontFamily: "'Courier New', monospace", fontSize: "0.8rem", color: "#181818", }}>
+          <span style={{ fontFamily: "'Courier New', monospace", fontSize: "0.8rem", color: "#181818" }}>$</span>
+          <span style={{ fontFamily: "'Courier New', monospace", fontSize: "0.8rem", color: "#181818" }}>
             pnpm add putix-react
           </span>
         </div>
@@ -218,55 +206,17 @@ export default function Home() {
           }}
         >
           {[
-            {
-              icon: "🌸",
-              title: "Soft Aesthetics",
-              desc: "Pastel color palette designed to be easy on the eyes and beautiful by default.",
-            },
-            {
-              icon: "⚡",
-              title: "Tailwind Ready",
-              desc: "Built with CSS variables, fully customizable to fit any design system.",
-            },
-            {
-              icon: "🔷",
-              title: "TypeScript First",
-              desc: "Full type support out of the box. Autocomplete and type safety included.",
-            },
-            {
-              icon: "📦",
-              title: "Lightweight",
-              desc: "No unnecessary dependencies. Ships only what you need.",
-            },
+            { icon: "🌸", title: "Soft Aesthetics", desc: "Pastel color palette designed to be easy on the eyes and beautiful by default." },
+            { icon: "⚡", title: "Tailwind Ready", desc: "Built with CSS variables, fully customizable to fit any design system." },
+            { icon: "🔷", title: "TypeScript First", desc: "Full type support out of the box. Autocomplete and type safety included." },
+            { icon: "📦", title: "Lightweight", desc: "No unnecessary dependencies. Ships only what you need." },
           ].map((f) => (
-            <div
-              key={f.title}
-              style={{
-                background: "#fff",
-                padding: "2rem",
-              }}
-            >
+            <div key={f.title} style={{ background: "#fff", padding: "2rem" }}>
               <div style={{ fontSize: "1.5rem", marginBottom: "0.75rem" }}>{f.icon}</div>
-              <h3
-                style={{
-                  fontFamily: "'Georgia', serif",
-                  fontSize: "1rem",
-                  fontWeight: "600",
-                  color: "#171717",
-                  marginBottom: "0.5rem",
-                }}
-              >
+              <h3 style={{ fontFamily: "'Georgia', serif", fontSize: "1rem", fontWeight: "600", color: "#171717", marginBottom: "0.5rem" }}>
                 {f.title}
               </h3>
-              <p
-                style={{
-                  fontFamily: "'Courier New', monospace",
-                  fontSize: "0.72rem",
-                  lineHeight: "1.7",
-                  color: "#888",
-                  letterSpacing: "0.01em",
-                }}
-              >
+              <p style={{ fontFamily: "'Courier New', monospace", fontSize: "0.72rem", lineHeight: "1.7", color: "#888", letterSpacing: "0.01em" }}>
                 {f.desc}
               </p>
             </div>
@@ -277,63 +227,20 @@ export default function Home() {
       {/* Quick start */}
       <section className="relative z-10 max-w-4xl mx-auto px-10 pb-32">
         <div className="mb-10 text-center">
-          <span
-            style={{
-              fontFamily: "'Courier New', monospace",
-              fontSize: "0.65rem",
-              letterSpacing: "0.2em",
-              color: "#2b2b2b",
-              textTransform: "uppercase",
-            }}
-          >
+          <span style={{ fontFamily: "'Courier New', monospace", fontSize: "0.65rem", letterSpacing: "0.2em", color: "#2b2b2b", textTransform: "uppercase" }}>
             — Quick Start —
           </span>
         </div>
-        <div
-          style={{
-            background: "#fafafa",
-            border: "1px solid #ebebeb",
-            borderRadius: "16px",
-            overflow: "hidden",
-          }}
-        >
-          {/* Code header */}
-          <div
-            style={{
-              padding: "12px 20px",
-              borderBottom: "1px solid #ebebeb",
-              display: "flex",
-              alignItems: "center",
-              gap: "6px",
-            }}
-          >
+        <div style={{ background: "#fafafa", border: "1px solid #ebebeb", borderRadius: "16px", overflow: "hidden" }}>
+          <div style={{ padding: "12px 20px", borderBottom: "1px solid #ebebeb", display: "flex", alignItems: "center", gap: "6px" }}>
             <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#ffcdd2" }} />
             <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#ffe0b2" }} />
             <div style={{ width: 10, height: 10, borderRadius: "50%", background: "#c8e6c9" }} />
-            <span
-              style={{
-                fontFamily: "'Courier New', monospace",
-                fontSize: "0.65rem",
-                color: "#323232",
-                marginLeft: "8px",
-                letterSpacing: "0.08em",
-              }}
-            >
+            <span style={{ fontFamily: "'Courier New', monospace", fontSize: "0.65rem", color: "#323232", marginLeft: "8px", letterSpacing: "0.08em" }}>
               page.tsx
             </span>
           </div>
-          {/* Code body */}
-          <pre
-            style={{
-              fontFamily: "'Courier New', monospace",
-              fontSize: "0.8rem",
-              lineHeight: "1.8",
-              color: "#444",
-              padding: "1.5rem 2rem",
-              overflowX: "auto",
-              margin: 0,
-            }}
-          >
+          <pre style={{ fontFamily: "'Courier New', monospace", fontSize: "0.8rem", lineHeight: "1.8", color: "#444", padding: "1.5rem 2rem", overflowX: "auto", margin: 0 }}>
 {`import { Button, Card, Badge } from 'putix-react'
 
 export default function App() {
@@ -354,13 +261,7 @@ export default function App() {
       {/* Footer */}
       <footer
         className="relative z-10 text-center pb-10"
-        style={{
-          fontFamily: "'Courier New', monospace",
-          fontSize: "0.65rem",
-          letterSpacing: "0.12em",
-          color: "#000000",
-          textTransform: "uppercase",
-        }}
+        style={{ fontFamily: "'Courier New', monospace", fontSize: "0.65rem", letterSpacing: "0.12em", color: "#000000", textTransform: "uppercase" }}
       >
         by Putri Wulandari &nbsp;·&nbsp; MIT License
       </footer>
