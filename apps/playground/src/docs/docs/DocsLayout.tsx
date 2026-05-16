@@ -8,10 +8,10 @@ const NAV_LINKS = [
   { label: 'npm', href: 'https://www.npmjs.com/package/putix-react', external: true },
 ]
 
-const STATUS_COLORS: Record<string, string> = {
-  stable: '#c8e6c9',
-  beta: '#ffe0b2',
-  soon: '#eeeeee',
+const STATUS_COLORS: Record<string, { bg: string; color: string }> = {
+  stable: { bg: '#edfaf3', color: '#0f5a2e' },
+  beta: { bg: '#ebf4ff', color: '#1260c4' },
+  soon: { bg: '#f5f6f8', color: '#9aa2b4' },
 }
 
 interface DocsLayoutProps {
@@ -22,14 +22,17 @@ export function DocsLayout({ children }: DocsLayoutProps) {
   const router = useRouter()
 
   return (
-    <div style={{ minHeight: '100vh', background: '#fff' }}>
+    <div style={{ minHeight: '100vh', background: '#fff', fontFamily: "'DM Mono', monospace" }}>
       {/* Grid background */}
       <div
-        className="fixed inset-0 pointer-events-none"
         style={{
+          position: 'fixed',
+          inset: 0,
+          pointerEvents: 'none',
+          zIndex: 0,
           backgroundImage: `
-            linear-gradient(rgba(0,0,0,0.04) 1px, transparent 1px),
-            linear-gradient(90deg, rgba(0,0,0,0.04) 1px, transparent 1px)
+            linear-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+            linear-gradient(90deg, rgba(0,0,0,0.03) 1px, transparent 1px)
           `,
           backgroundSize: '40px 40px',
         }}
@@ -37,23 +40,27 @@ export function DocsLayout({ children }: DocsLayoutProps) {
 
       {/* Nav */}
       <nav
-        className="relative z-10 flex items-center justify-between px-10 py-6"
         style={{
-          borderBottom: '1px solid #f0f0f0',
-          background: 'rgba(255,255,255,0.8)',
-          backdropFilter: 'blur(8px)',
           position: 'sticky',
           top: 0,
+          zIndex: 20,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          padding: '1rem 2.5rem',
+          borderBottom: '1px solid #e2e5ec',
+          background: 'rgba(255,255,255,0.85)',
+          backdropFilter: 'blur(8px)',
         }}
       >
         <Link href="/">
           <img
             src="/putix-ui-logos.png"
             alt="putix logo"
-            style={{ height: '50px', objectFit: 'contain' }}
+            style={{ height: '36px', objectFit: 'contain' }}
           />
         </Link>
-        <div className="flex items-center gap-8">
+        <div style={{ display: 'flex', alignItems: 'center', gap: '2rem' }}>
           {NAV_LINKS.map((link) =>
             link.external ? (
               <a
@@ -74,7 +81,16 @@ export function DocsLayout({ children }: DocsLayoutProps) {
         </div>
       </nav>
 
-      <div style={{ display: 'flex', maxWidth: '1100px', margin: '0 auto', padding: '0 2rem' }}>
+      <div
+        style={{
+          display: 'flex',
+          maxWidth: '1100px',
+          margin: '0 auto',
+          padding: '0 2rem',
+          position: 'relative',
+          zIndex: 1,
+        }}
+      >
         {/* Sidebar */}
         <aside
           style={{
@@ -82,9 +98,9 @@ export function DocsLayout({ children }: DocsLayoutProps) {
             flexShrink: 0,
             padding: '2.5rem 0',
             position: 'sticky',
-            top: '80px',
+            top: '72px',
             alignSelf: 'flex-start',
-            height: 'calc(100vh - 80px)',
+            height: 'calc(100vh - 72px)',
             overflowY: 'auto',
           }}
         >
@@ -100,8 +116,8 @@ export function DocsLayout({ children }: DocsLayoutProps) {
                 ...sidebarLinkStyle,
                 color:
                   router.pathname === '/components' && item.href === '/components'
-                    ? '#171717'
-                    : '#888',
+                    ? '#1e2436'
+                    : '#9aa2b4',
                 fontWeight:
                   router.pathname === '/components' && item.href === '/components' ? 600 : 400,
               }}
@@ -117,7 +133,7 @@ export function DocsLayout({ children }: DocsLayoutProps) {
               href={`/components/${comp.slug}`}
               style={{
                 ...sidebarLinkStyle,
-                color: router.asPath === `/components/${comp.slug}` ? '#171717' : '#888',
+                color: router.asPath === `/components/${comp.slug}` ? '#1e2436' : '#9aa2b4',
                 fontWeight: router.asPath === `/components/${comp.slug}` ? 600 : 400,
                 opacity: comp.status === 'soon' ? 0.4 : 1,
                 pointerEvents: comp.status === 'soon' ? 'none' : 'auto',
@@ -133,8 +149,8 @@ export function DocsLayout({ children }: DocsLayoutProps) {
                     fontSize: '0.55rem',
                     padding: '1px 6px',
                     borderRadius: '9999px',
-                    background: STATUS_COLORS[comp.status],
-                    color: '#555',
+                    background: STATUS_COLORS[comp.status].bg,
+                    color: STATUS_COLORS[comp.status].color,
                     fontWeight: 400,
                     letterSpacing: '0.05em',
                   }}
@@ -154,26 +170,27 @@ export function DocsLayout({ children }: DocsLayoutProps) {
 }
 
 const navLinkStyle: React.CSSProperties = {
-  fontFamily: "'Courier New', monospace",
-  fontSize: '0.7rem',
+  fontFamily: "'DM Mono', monospace",
+  fontSize: '0.65rem',
   letterSpacing: '0.12em',
-  color: '#181818',
+  color: '#9aa2b4',
   textTransform: 'uppercase',
   textDecoration: 'none',
+  transition: 'color 0.15s',
 }
 
 const sidebarLabelStyle: React.CSSProperties = {
-  fontFamily: "'Courier New', monospace",
+  fontFamily: "'DM Mono', monospace",
   fontSize: '0.6rem',
   letterSpacing: '0.15em',
   textTransform: 'uppercase',
-  color: '#bbb',
+  color: '#c8ceda',
   marginBottom: '0.5rem',
 }
 
 const sidebarLinkStyle: React.CSSProperties = {
   display: 'block',
-  fontFamily: "'Courier New', monospace",
+  fontFamily: "'DM Mono', monospace",
   fontSize: '0.75rem',
   textDecoration: 'none',
   padding: '5px 0',

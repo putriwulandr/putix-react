@@ -17,30 +17,31 @@ export function CodeBlock({ code, filename = 'example.tsx' }: CodeBlockProps) {
   return (
     <div
       style={{
-        background: '#fafafa',
-        border: '1px solid #ebebeb',
+        background: '#f5f6f8',
+        border: '1px solid #e2e5ec',
         borderRadius: '12px',
         overflow: 'hidden',
       }}
     >
+      {/* Header */}
       <div
         style={{
           padding: '10px 16px',
-          borderBottom: '1px solid #ebebeb',
+          borderBottom: '1px solid #e2e5ec',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-          <div style={{ width: 9, height: 9, borderRadius: '50%', background: '#ffcdd2' }} />
-          <div style={{ width: 9, height: 9, borderRadius: '50%', background: '#ffe0b2' }} />
-          <div style={{ width: 9, height: 9, borderRadius: '50%', background: '#c8e6c9' }} />
+          <div style={{ width: 9, height: 9, borderRadius: '50%', background: '#ffa8cf' }} />
+          <div style={{ width: 9, height: 9, borderRadius: '50%', background: '#bddeff' }} />
+          <div style={{ width: 9, height: 9, borderRadius: '50%', background: '#99f6e4' }} />
           <span
             style={{
-              fontFamily: "'Courier New', monospace",
+              fontFamily: "'DM Mono', monospace",
               fontSize: '0.62rem',
-              color: '#aaa',
+              color: '#9aa2b4',
               marginLeft: '8px',
               letterSpacing: '0.08em',
             }}
@@ -50,29 +51,56 @@ export function CodeBlock({ code, filename = 'example.tsx' }: CodeBlockProps) {
         </div>
         <button
           onClick={handleCopy}
+          title={copied ? 'Copied!' : 'Copy'}
           style={{
-            fontFamily: "'Courier New', monospace",
-            fontSize: '0.6rem',
-            letterSpacing: '0.1em',
-            textTransform: 'uppercase',
             background: 'none',
-            border: '1px solid #e5e5e5',
-            borderRadius: '6px',
-            padding: '3px 10px',
+            border: 'none',
             cursor: 'pointer',
-            color: copied ? '#4caf50' : '#aaa',
+            padding: '2px',
+            color: copied ? '#5a8df5' : '#c8ceda',
+            display: 'flex',
+            alignItems: 'center',
             transition: 'color 0.2s',
           }}
         >
-          {copied ? 'Copied!' : 'Copy'}
+          {copied ? (
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <polyline points="20 6 9 17 4 12" />
+            </svg>
+          ) : (
+            <svg
+              width="14"
+              height="14"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+              <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+            </svg>
+          )}
         </button>
       </div>
+
+      {/* Code */}
       <pre
         style={{
-          fontFamily: "'Courier New', monospace",
-          fontSize: '0.8rem',
+          fontFamily: "'DM Mono', monospace",
+          fontSize: '0.78rem',
           lineHeight: '1.8',
-          color: '#444',
+          color: '#424b5f',
           padding: '1.25rem 1.5rem',
           overflowX: 'auto',
           margin: 0,

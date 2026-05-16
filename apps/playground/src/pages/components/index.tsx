@@ -12,10 +12,10 @@ export default function ComponentsPage() {
         <div>
           <h1
             style={{
-              fontFamily: "'Georgia', serif",
+              fontFamily: "'Fraunces', serif",
               fontSize: 'clamp(1.8rem, 4vw, 2.8rem)',
               fontWeight: 700,
-              color: '#171717',
+              color: '#1e2436',
               marginBottom: '0.75rem',
             }}
           >
@@ -23,9 +23,9 @@ export default function ComponentsPage() {
           </h1>
           <p
             style={{
-              fontFamily: "'Courier New', monospace",
-              fontSize: '0.82rem',
-              color: '#888',
+              fontFamily: "'DM Mono', monospace",
+              fontSize: '0.78rem',
+              color: '#6b758a',
               lineHeight: '1.8',
               maxWidth: '520px',
             }}
@@ -79,8 +79,8 @@ export default function Page() {
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fill, minmax(160px, 1fr))',
               gap: '1px',
-              background: '#ebebeb',
-              border: '1px solid #ebebeb',
+              background: '#e2e5ec',
+              border: '1px solid #e2e5ec',
               borderRadius: '12px',
               overflow: 'hidden',
             }}
@@ -90,18 +90,18 @@ export default function Page() {
                 <div key={comp.slug} style={gridItemStyle(false)}>
                   <span
                     style={{
-                      fontFamily: "'Courier New', monospace",
-                      fontSize: '0.8rem',
-                      color: '#ccc',
+                      fontFamily: "'DM Mono', monospace",
+                      fontSize: '0.78rem',
+                      color: '#c8ceda',
                     }}
                   >
                     {comp.name}
                   </span>
                   <span
                     style={{
-                      fontFamily: "'Courier New', monospace",
+                      fontFamily: "'DM Mono', monospace",
                       fontSize: '0.55rem',
-                      color: '#ddd',
+                      color: '#c8ceda',
                       letterSpacing: '0.1em',
                     }}
                   >
@@ -112,18 +112,18 @@ export default function Page() {
                 <Link key={comp.slug} href={`/components/${comp.slug}`} style={gridItemStyle(true)}>
                   <span
                     style={{
-                      fontFamily: "'Courier New', monospace",
-                      fontSize: '0.8rem',
-                      color: '#171717',
+                      fontFamily: "'DM Mono', monospace",
+                      fontSize: '0.78rem',
+                      color: '#1e2436',
                     }}
                   >
                     {comp.name}
                   </span>
                   <span
                     style={{
-                      fontFamily: "'Courier New', monospace",
+                      fontFamily: "'DM Mono', monospace",
                       fontSize: '0.6rem',
-                      color: '#bbb',
+                      color: '#5a8df5',
                     }}
                   >
                     →
